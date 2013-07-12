@@ -10,7 +10,7 @@ import org.bukkit.plugin.Plugin;
  */
 public class WorldCreator {
     private final String name;
-    private long seed;
+    private long seed=(new Random()).nextLong();
     private World.Environment environment = World.Environment.NORMAL;
     private ChunkGenerator generator = null;
     private WorldType type = WorldType.NORMAL;
@@ -27,7 +27,6 @@ public class WorldCreator {
         }
 
         this.name = name;
-        this.seed = (new Random()).nextLong();
     }
 
     /**
