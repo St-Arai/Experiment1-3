@@ -106,13 +106,11 @@ public class ConfigurationSerialization {
         ConfigurationSerializable result = null;
         Method method = null;
 
-        if (result == null) {
             method = getMethod("deserialize", true);
 
             if (method != null) {
                 result = deserializeViaMethod(method, args);
             }
-        }
 
         if (result == null) {
             method = getMethod("valueOf", true);
@@ -259,13 +257,11 @@ public class ConfigurationSerialization {
             }
         }
 
-        if (delegate == null) {
             SerializableAs alias = clazz.getAnnotation(SerializableAs.class);
 
             if ((alias != null) && (alias.value() != null)) {
                 return alias.value();
             }
-        }
 
         return clazz.getName();
     }
