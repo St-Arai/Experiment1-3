@@ -250,11 +250,7 @@ public class ConfigurationSerialization {
         DelegateDeserialization delegate = clazz.getAnnotation(DelegateDeserialization.class);
 
         if (delegate != null) {
-            if ((delegate.value() == null) || (delegate.value() == clazz)) {
-                delegate = null;
-            } else {
                 return getAlias(delegate.value());
-            }
         }
 
             SerializableAs alias = clazz.getAnnotation(SerializableAs.class);
